@@ -25,7 +25,7 @@ const App = () => {
                   <Route path="/main" element={<MainPage />} />
                   <Route path="/templates" element={<TemplatePage />} />
                   <Route path="/user/:nickname" element={<ProfilePage />} />
-                  <Route path="/sheet/:id" element={<SheetPage />} />
+                  <Route path="/user/sheet/:url" element={<SheetPage />} />
                   <Route path="/" element={<Navigate to="/main" replace />} />
                 </Routes>
               </AppLayout>
