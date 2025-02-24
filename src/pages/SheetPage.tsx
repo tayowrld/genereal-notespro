@@ -13,12 +13,13 @@ import {
   CheckSquare,
   Trash2,
 } from "lucide-react";
-import { getAllSheets, saveSheet, deleteSheet } from "@/utils/sheetUtils";
+import { getAllSheets, saveSheet, deleteSheet, SheetMetadata } from "@/utils/sheetUtils";
 
 interface SheetContent {
   title: string;
   content: string;
   lastModified: string;
+  created: string;
 }
 
 export function SheetPage() {
@@ -29,6 +30,7 @@ export function SheetPage() {
     title: "Новый лист",
     content: "",
     lastModified: new Date().toISOString(),
+    created: new Date().toISOString(),
   });
 
   useEffect(() => {
@@ -44,8 +46,11 @@ export function SheetPage() {
         saveSheet({
           id,
           url: id,
-          ...sheet,
-          editHistory: []
+          title: sheet.title,
+          content: sheet.content,
+          lastModified: sheet.lastModified,
+          created: sheet.created,
+          editHistory: [sheet.lastModified]
         });
       }
     }, 1000);
