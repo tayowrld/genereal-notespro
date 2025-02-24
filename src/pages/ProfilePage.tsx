@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { BrandTelegram, BrandLinkedin } from "lucide-react";
+import { MessageCircle, Linkedin } from "lucide-react";
 
 // Имитация данных пользователя
 const DEMO_USER = {
@@ -77,11 +77,11 @@ export function ProfilePage() {
           <h2 className="text-xl font-semibold">Контакты</h2>
           <div className="flex space-x-4">
             <Button variant="outline" className="space-x-2">
-              <BrandTelegram className="h-4 w-4" />
+              <MessageCircle className="h-4 w-4" />
               <span>Telegram</span>
             </Button>
             <Button variant="outline" className="space-x-2">
-              <BrandLinkedin className="h-4 w-4" />
+              <Linkedin className="h-4 w-4" />
               <span>LinkedIn</span>
             </Button>
           </div>
