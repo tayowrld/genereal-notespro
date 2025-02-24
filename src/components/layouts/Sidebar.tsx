@@ -76,7 +76,7 @@ export function Sidebar() {
             {/* Закрепленные листы */}
             <div className="space-y-2">
               <div className="flex items-center justify-between px-2">
-                <span className="text-sm font-medium">Закрепленные</span>
+                <span className="text-sm font-medium">Поток</span>
                 <Button variant="ghost" size="icon" className="h-8 w-8">
                   <Plus className="h-4 w-4" />
                 </Button>
