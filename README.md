@@ -1,69 +1,103 @@
-# Welcome to your Lovable project
 
-## Project info
+# Генераль - Система управления документами
 
-**URL**: https://lovable.dev/projects/be1bc465-bf72-4ea5-97a7-45c30da41ab1
+Генераль - это современное веб-приложение для создания и управления документами с богатым текстовым редактором, поддержкой медиафайлов и аналитикой.
 
-## How can I edit this code?
+## Основные возможности
 
-There are several ways of editing your application.
+- 📝 Создание и редактирование документов с форматированием
+- 📊 Аналитика использования и активности
+- 🌓 Темная и светлая темы
+- 📱 Адаптивный дизайн
+- 📎 Поддержка drag-and-drop файлов
+- 📂 Организация документов в потоки
 
-**Use Lovable**
+## Технологии
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/be1bc465-bf72-4ea5-97a7-45c30da41ab1) and start prompting.
+- React 18.3
+- TypeScript
+- Vite
+- Tailwind CSS
+- Shadcn/ui
+- Recharts для визуализации данных
+- React Router для навигации
+- LocalStorage для хранения данных
 
-Changes made via Lovable will be committed automatically to this repo.
+## Начало работы
 
-**Use your preferred IDE**
+1. Клонируйте репозиторий:
+```bash
+git clone <repository-url>
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. Установите зависимости:
+```bash
+npm install
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Запустите приложение:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Структура проекта
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── components/         # UI компоненты
+│   ├── layouts/       # Компоненты макета
+│   └── ui/           # UI компоненты
+├── data/             # JSON данные
+├── pages/            # Компоненты страниц
+├── utils/            # Утилиты
+└── hooks/            # React хуки
+```
 
-**Use GitHub Codespaces**
+## Основные функции
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Управление документами
 
-## What technologies are used for this project?
+- Создание новых документов: Нажмите "+" в секции "Поток"
+- Редактирование: Используйте встроенный редактор с поддержкой форматирования
+- Удаление: Кнопка удаления в интерфейсе документа или в списке
 
-This project is built with .
+### Работа с файлами
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Перетащите файлы прямо в редактор
+- Поддерживаются изображения и PDF
+- Автоматическое встраивание медиафайлов
 
-## How can I deploy this project?
+### Аналитика
 
-Simply open [Lovable](https://lovable.dev/projects/be1bc465-bf72-4ea5-97a7-45c30da41ab1) and click on Share -> Publish.
+- График активности на главной странице
+- Детальная статистика использования
+- Отслеживание изменений документов
 
-## I want to use a custom domain - is that possible?
+## Разработка
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+### Добавление новых функций
+
+1. Создайте новую ветку:
+```bash
+git checkout -b feature/name
+```
+
+2. Внесите изменения и создайте коммит:
+```bash
+git add .
+git commit -m "Описание изменений"
+```
+
+3. Создайте pull request
+
+### Структура компонентов
+
+Каждый компонент должен:
+- Находиться в отдельном файле
+- Использовать TypeScript
+- Следовать принципам React Hooks
+- Использовать Tailwind для стилизации
+
+## Лицензия
+
+MIT

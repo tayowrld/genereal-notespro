@@ -3,6 +3,7 @@ export interface SheetMetadata {
   id: string;
   title: string;
   url: string;
+  content: string;
   created: string;
   lastModified: string;
   editHistory: string[];
@@ -17,21 +18,14 @@ export const generateSheetUrl = (title: string): string => {
     'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya'
   };
 
-  // Convert to lowercase and transliterate
   const latinTitle = title.toLowerCase().split('').map(char => 
     cyrillicToLatin[char] || char
   ).join('');
 
-  // Replace non-alphanumeric characters with hyphens
   const baseUrl = latinTitle.replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-
-  // Get existing sheets
   const sheets = getAllSheets();
-  const similarUrls = sheets.filter(sheet => 
-    sheet.url.startsWith(baseUrl)
-  );
+  const similarUrls = sheets.filter(sheet => sheet.url.startsWith(baseUrl));
 
-  // Add number suffix if needed
   if (similarUrls.length === 0) return `${baseUrl}-01`;
 
   const maxNumber = Math.max(...similarUrls.map(sheet => {
@@ -42,13 +36,38 @@ export const generateSheetUrl = (title: string): string => {
   return `${baseUrl}-${String(maxNumber + 1).padStart(2, '0')}`;
 };
 
+export const createSheet = (title: string): SheetMetadata => {
+  const url = generateSheetUrl(title);
+  const now = new Date().toISOString();
+  const sheet: SheetMetadata = {
+    id: url,
+    title,
+    url,
+    content: '',
+    created: now,
+    lastModified: now,
+    editHistory: [now]
+  };
+  
+  localStorage.setItem(`sheet-${url}`, JSON.stringify(sheet));
+  return sheet;
+};
+
+export const deleteSheet = (url: string): void => {
+  localStorage.removeItem(`sheet-${url}`);
+};
+
 export const getAllSheets = (): SheetMetadata[] => {
   return Object.keys(localStorage)
     .filter(key => key.startsWith('sheet-'))
     .map(key => JSON.parse(localStorage.getItem(key) || '{}'))
-    .filter(sheet => sheet.url);
+    .filter(sheet => sheet.url)
+    .sort((a, b) => new Date(b.lastModified).getTime() - new Date(a.lastModified).getTime());
 };
 
-export const saveSheet = (sheet: SheetMetadata) => {
+export const saveSheet = (sheet: SheetMetadata): void => {
+  const now = new Date().toISOString();
+  sheet.lastModified = now;
+  sheet.editHistory.push(now);
   localStorage.setItem(`sheet-${sheet.url}`, JSON.stringify(sheet));
 };
