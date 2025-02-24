@@ -1,3 +1,4 @@
+
 import { BarChart2, FileText, ShoppingBag } from "lucide-react";
 import {
   Card,
@@ -19,6 +20,28 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import documentsData from "../data/documents.json";
+
+// Define popular templates data
+const popularTemplates = [
+  {
+    id: 1,
+    title: "Управление проектами",
+    description: "Шаблон для эффективного управления проектами",
+    price: 450
+  },
+  {
+    id: 2,
+    title: "CRM система",
+    description: "Простая CRM система для малого бизнеса",
+    price: 450
+  },
+  {
+    id: 3,
+    title: "Канбан доска",
+    description: "Организация задач методом Канбан",
+    price: 350
+  }
+];
 
 export function MainPage() {
   const navigate = useNavigate();
