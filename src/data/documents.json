@@ -1,0 +1,29 @@
+
+{
+  "documents": [
+    {
+      "id": "vazhnaja-zametka-01",
+      "title": "Важная заметка",
+      "content": "<h1>Планирование проекта</h1><p><strong>Основные этапы:</strong></p><ul><li><input type='checkbox' checked /> Анализ требований</li><li><input type='checkbox' /> Разработка архитектуры</li><li><input type='checkbox' /> Реализация MVP</li></ul><p><em>Дедлайн: 1 марта 2024</em></p>",
+      "created": "2024-02-01T10:00:00Z",
+      "lastModified": "2024-02-20T15:30:00Z",
+      "editHistory": ["2024-02-01T10:00:00Z", "2024-02-15T14:20:00Z", "2024-02-20T15:30:00Z"]
+    },
+    {
+      "id": "kalendar-01",
+      "title": "Календарь",
+      "content": "<h1>Календарь встреч</h1><table><tr><th>Дата</th><th>Событие</th></tr><tr><td>01.03.2024</td><td>Встреча с клиентом</td></tr><tr><td>05.03.2024</td><td>Презентация MVP</td></tr></table>",
+      "created": "2024-02-10T09:00:00Z",
+      "lastModified": "2024-02-19T11:20:00Z",
+      "editHistory": ["2024-02-10T09:00:00Z", "2024-02-19T11:20:00Z"]
+    },
+    {
+      "id": "zadachi-01",
+      "title": "Задачи",
+      "content": "<h1>Текущие задачи</h1><div class='kanban'><div class='column'><h3>В работе</h3><div class='task'>Разработка UI</div><div class='task'>Тестирование API</div></div><div class='column'><h3>Готово</h3><div class='task'>Настройка CI/CD</div></div></div>",
+      "created": "2024-02-15T08:00:00Z",
+      "lastModified": "2024-02-18T16:45:00Z",
+      "editHistory": ["2024-02-15T08:00:00Z", "2024-02-18T16:45:00Z"]
+    }
+  ]
+}
